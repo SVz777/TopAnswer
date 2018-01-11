@@ -7,7 +7,9 @@
 部分灵感来自：
 > [答题辅助决策：冲顶大会等答题类游戏 ](https://github.com/Skyexu/TopSup)
 
-
+##运行环境
+python 3.6.0
+Tesseract-OCR 4.0
 ## 具体思路
 
 1. ADB 获取手机截屏
