@@ -1,0 +1,6 @@
+.idea
+*.iml
+test.py
+*.txt
+*.png
+*.py[cod]
