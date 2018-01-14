@@ -1,13 +1,13 @@
 import webbrowser
-from time import sleep
-
-import re
 import requests
 
 from config.config import DEBUG
 from lib.colorPrint import ColorPrint
 from lib.ocr import Ocr
 from bs4 import BeautifulSoup
+
+from screenBackup import backup
+
 colorPrint=ColorPrint()
 
 
@@ -15,13 +15,10 @@ class OneKey():
     url="http://www.baidu.com/s"
     def __init__(self,app="baiwan",count=1):
         self.ocr=Ocr(app,count)
-
+        self.app=app
     def search_base(self,question):
         webbrowser.open(OneKey.url+"?wd="+question)
 
-    #
-    #
-    #
     def search_baiducount(self, question, choices):
         # TODO 优化
         print("-------百度计数-------")
@@ -76,10 +73,16 @@ class OneKey():
 
         return False
 
+    def save_screen(self):
+        backup(self.app)
+        pass
+
+
     def start(self):
         while True:
             q=input("回车继续,输入q退出\n")
             if q=='q':
+                self.save_screen()
                 break
             q,cs=self.ocr.ocr_img_count()
             try:

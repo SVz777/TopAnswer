@@ -10,7 +10,7 @@ from PIL.PngImagePlugin import PngImageFile
 
 class Ocr(object):
 
-    def __init__(self, app, count, lang="-l chi_sim", cleanup=False):
+    def __init__(self, app, count, lang="-l chi_sim+normal", cleanup=False):
         self.app=app
         self.count=count
         self.lang=lang

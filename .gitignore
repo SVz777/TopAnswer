@@ -1,6 +1,10 @@
 .idea
 *.iml
-test.py
+*.bat
+*.html
 *.txt
 *.png
+
+
+test.py
 *.py[cod]
